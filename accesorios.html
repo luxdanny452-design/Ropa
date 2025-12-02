@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Accesorios</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #000000, #3a0057);
+        color: white;
+    }
+
+    /* Menu lateral */
+    #menuBtn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 35px;
+        height: 25px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    #menuBtn div {
+        width: 100%;
+        height: 5px;
+        background: white;
+        margin: 5px 0;
+    }
+
+    #sideMenu {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background: #1a1a1a;
+        padding-top: 60px;
+        transition: 0.3s;
+        z-index: 999;
+    }
+
+    #sideMenu a {
+        display: block;
+        padding: 15px;
+        color: white;
+        text-decoration: none;
+        border-bottom: 1px solid #333;
+    }
+
+    #sideMenu a:hover {
+        background: #333;
+    }
+
+    /* Grid productos */
+    .contenedor {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+        padding: 40px;
+        margin-top: 40px;
+    }
+
+    .item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.2s;
+    }
+
+    .item img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .item:hover {
+        transform: scale(1.05);
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Boton volver */
+    .volver {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .volver a {
+        color: white;
+        font-size: 22px;
+        text-decoration: none;
+        padding: 10px 20px;
+        border: 2px solid white;
+        border-radius: 8px;
+    }
+
+    .volver a:hover {
+        background: white;
+        color: black;
+    }
+</style>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("sideMenu");
+        if (menu.style.left === "0px") {
+            menu.style.left = "-250px";
+        } else {
+            menu.style.left = "0px";
+        }
+    }
+
+    document.addEventListener("click", function(e) {
+        var menu = document.getElementById("sideMenu");
+        var btn = document.getElementById("menuBtn");
+
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+            menu.style.left = "-250px";
+        }
+    });
+</script>
+
+</head>
+
+<body>
+
+<!-- Boton menu -->
+<div id="menuBtn" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<!-- Menu lateral -->
+<div id="sideMenu">
+    <a href="tienda.html">Inicio</a>
+    <a href="somos.html">Quienes somos</a>
+</div>
+
+<h1 style="text-align:center; margin-top:40px;">Accesorios</h1>
+
+<div class="contenedor">
+
+    <div class="item">
+        <img src="a1.jpg" alt="Accesorio 1">
+        <h3>Accesorio 1</h3>
+        <p>$100</p>
+    </div>
+
+    <div class="item">
+        <img src="a2.jpg" alt="Accesorio 2">
+        <h3>Accesorio 2</h3>
+        <p>$120</p>
+    </div>
+
+    <div class="item">
+        <img src="a3.jpg" alt="Accesorio 3">
+        <h3>Accesorio 3</h3>
+        <p>$150</p>
+    </div>
+
+</div>
+
+<div class="volver">
+    <a href="tienda.html">Volver al inicio</a>
+</div>
+
+</body>
+</html>

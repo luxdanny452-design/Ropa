@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Camisas</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(135deg, #000000, #3a0450);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 35px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .menu-btn div {
+            width: 100%;
+            height: 6px;
+            background: white;
+            margin: 5px 0;
+            border-radius: 3px;
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: rgba(20,0,30,0.95);
+            padding-top: 60px;
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        .side-menu a {
+            display: block;
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .side-menu a:hover {
+            background: rgba(120,0,180,0.4);
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            display: none;
+            z-index: 900;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 40px;
+            letter-spacing: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            padding: 40px;
+        }
+
+        .item {
+            background: rgba(255,255,255,0.07);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(120,0,180,0.6);
+            transition: transform 0.2s;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+        }
+
+        .item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .price {
+            font-size: 22px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .volver {
+            display: block;
+            margin: 20px auto;
+            width: 220px;
+            text-align: center;
+            padding: 12px;
+            color: white;
+            background: #7a00b5;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 20px;
+            transition: 0.2s;
+        }
+
+        .volver:hover {
+            background: #a400ff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-btn" onclick="openMenu()">
+        <div></div><div></div><div></div>
+    </div>
+
+    <div class="side-menu" id="sideMenu">
+        <a href="tienda.html" onclick="closeMenu()">Inicio / Tienda</a>
+        <a href="somos.html" onclick="closeMenu()">Quienes somos</a>
+    </div>
+
+    <div class="menu-overlay" id="overlay" onclick="closeMenu()"></div>
+
+    <h1>Camisas</h1>
+
+    <div class="grid">
+
+        <div class="item">
+            <img src="camisa1.jpg">
+            <div class="price">$100</div>
+        </div>
+
+        <div class="item">
+            <img src="camisa2.jpg">
+            <div class="price">$150</div>
+        </div>
+
+        <div class="item">
+            <img src="camisa3.jpg">
+            <div class="price">$100</div>
+        </div>
+
+        <div class="item">
+            <img src="camisa4.jpg">
+            <div class="price">$150</div>
+        </div>
+
+        <div class="item">
+            <img src="camisa5.jpg">
+            <div class="price">$100</div>
+        </div>
+
+        <div class="item">
+            <img src="camisa6.jpg">
+            <div class="price">$150</div>
+        </div>
+
+        <div class="item">
+            <img src="camisa7.jpg">
+            <div class="price">$100</div>
+        </div>
+
+        <div class="item">
+            <img src="camisa8.jpg">
+            <div class="price">$150</div>
+        </div>
+
+        <div class="item">
+            <img src="camisa9.jpg">
+            <div class="price">$100</div>
+        </div>
+
+        <div class="item">
+            <img src="camisa10.jpg">
+            <div class="price">$150</div>
+        </div>
+
+    </div>
+
+    <a class="volver" href="tienda.html">Volver a la tienda</a>
+
+    <script>
+        function openMenu() {
+            document.getElementById("sideMenu").style.left = "0";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function closeMenu() {
+            document.getElementById("sideMenu").style.left = "-250px";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
