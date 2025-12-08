@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pagina Completa - Tienda Urbana</title>
+<meta charset="utf-8">
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #2b0030, #000000);
+    color: white;
+}
+.menu {
+    width: 200px;
+    background: #1a001f;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+}
+.menu a {
+    display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    border-bottom: 1px solid #42004a;
+}
+.menu a:hover {
+    background: #5c0070;
+}
+.contenido {
+    margin-left: 220px;
+    padding: 20px;
+}
+.caja {
+    background: rgba(255,255,255,0.06);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+h2{ margin-top:0; }
+.form-row{ margin:10px 0; }
+label{ display:block; margin-bottom:6px; }
+input[type=text], select, textarea {
+    width:100%;
+    max-width:600px;
+    padding:8px;
+    border-radius:6px;
+    border:1px solid rgba(255,255,255,0.08);
+    background: rgba(0,0,0,0.4);
+    color: white;
+}
+input[type=submit], input[type=reset]{
+    padding:8px 14px;
+    margin-right:8px;
+    border-radius:6px;
+    border:0;
+    cursor:pointer;
+}
+.btn-primary{ background:#7a00b5; color:white; }
+video{ max-width:100%; border-radius:8px; }
+@media (max-width:800px){
+    .menu{ position:relative; width:100%; height:auto; }
+    .contenido{ margin-left:0; }
+}
+</style>
+</head>
+<body>
+
+<div class="menu">
+    <a href="tienda.html">Inicio</a>
+    <a href="tienda.html">Tienda</a>
+    <a href="#quienes">Quienes somos</a>
+    <a href="#formulario">Formularios</a>
+</div>
+
+<div class="contenido">
+
+  <!-- QUIENES SOMOS -->
+  <div class="caja" id="quienes">
+    <h2>Quienes somos</h2>
+
+    <!-- PÁRRAFO 1 -->
+    <p>
+      Nuestro estilo de ropa está inspirado en la esencia vintage y urbana que ha marcado generaciones.
+      Nos dedicamos a buscar piezas únicas que no se encuentran en tiendas tradicionales como Coppel,
+      Liverpool o cadenas comerciales comunes. Cada prenda tiene una historia y un estilo propio que la
+      hace especial, manteniendo viva la autenticidad del verdadero estilo retro. Aquí no vendemos moda
+      repetida: vendemos identidad y exclusividad en cada detalle.
+    </p>
+
+    <!-- PÁRRAFO 2 -->
+    <p>
+      Combinamos tendencias urbanas modernas con elementos clásicos del pasado, creando un estilo
+      diferente que destaca en cualquier lugar. Nuestro enfoque está en traer ropa que normalmente solo
+      se encuentra en colecciones limitadas o en lugares muy específicos. Priorizamos calidad, diseño y
+      comodidad en cada pieza, logrando prendas duraderas y con carácter. Nuestra misión es que cada
+      cliente sienta que lleva algo único, no algo sacado de una producción masiva.
+    </p>
+
+    <!-- VIDEO (aquí quedó ubicado) -->
+    <video src="video.mp4" controls></video>
+
+    <!-- PÁRRAFO 3 (abajo del video) -->
+    <p>
+      Nos apasiona la cultura callejera, la estética vintage y la historia detrás de cada prenda. Por eso
+      renovamos constantemente nuestro catálogo con piezas seleccionadas una por una. Desde camisas
+      retro reales hasta suéteres con diseños exclusivos, trabajamos con ropa limitada que rara vez se
+      repite. Con esto mantenemos la esencia de una moda original, auténtica y distinta a lo que ofrecen
+      las tiendas comunes. Aquí cada prenda tiene alma, estilo y propósito.
+    </p>
+
+    <p>Cada prenda esta pensada para transmitir actitud y confianza.</p>
+    <p>Trabajamos con materiales y cortes que combinan estilo y comodidad.</p>
+    <p>Buscamos crear comunidad alrededor del estilo urbano.</p>
+  </div>
+
+  <!-- FORMULARIOS -->
+  <div class="caja" id="formulario">
+    <h2>Formularios</h2>
+
+    <!-- Formulario 1 -->
+    <form action="mailto:Ropadlux@hotmail.com" method="post" enctype="text/plain">
+      <h3>Ficha personal</h3>
+      <div class="form-row">
+        <label>Nombre</label>
+        <input type="text" name="Nombre">
+      </div>
+      <div class="form-row">
+        <label>Apellido</label>
+        <input type="text" name="Apellido">
+      </div>
+      <div class="form-row">
+        <label>Domicilio</label>
+        <input type="text" name="Domicilio">
+      </div>
+      <div class="form-row">
+        <label>Sexo</label>
+        Hombre <input type="radio" name="Sexo" value="Hombre">
+        Mujer <input type="radio" name="Sexo" value="Mujer">
+      </div>
+      <div class="form-row">
+        <input class="btn-primary" type="submit" value="Enviar ficha">
+        <input type="reset" value="Borrar">
+      </div>
+    </form>
+
+    <hr style="border-color:rgba(255,255,255,0.06)">
+
+    <!-- Formulario 2 -->
+    <form action="mailto:Ropadlux@gmail.com" method="post" enctype="text/plain">
+      <h3>Pedido / Preferencias</h3>
+      <div class="form-row">
+        <label>Categoria (multiple)</label>
+        <select name="Categoria" multiple size="4">
+          <option value="Camisas">Camisas</option>
+          <option value="Pantalones">Pantalones</option>
+          <option value="Accesorios">Accesorios</option>
+          <option value="Oversize">Oversize</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Talla</label>
+        <select name="Talla">
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Color preferido</label>
+        <input type="text" name="Color">
+      </div>
+      <div class="form-row">
+        <input class="btn-primary" type="submit" value="Enviar pedido">
+        <input type="reset" value="Borrar">
+      </div>
+    </form>
+
+    <hr style="border-color:rgba(255,255,255,0.06)">
+
+    <!-- Formulario 3 -->
+    <form action="mailto:Ropdadluxn@gmail.com" method="post" enctype="text/plain">
+      <h3>Opinion</h3>
+      <div class="form-row">
+        <label>Tu opinion</label>
+        <textarea name="Opinion" cols="40" rows="5">Escribe aqui tu comentario...</textarea>
+      </div>
+      <div class="form-row">
+        <input class="btn-primary" type="submit" value="Enviar opinion">
+        <input type="reset" value="Borrar">
+      </div>
+    </form>
+
+  </div>
+
+  <!-- IMAGEN DIVIDIDA EN 3 PARTES -->
+  <div class="caja" style="margin-top:25px;">
+    <h2>Redes y Contacto</h2>
+
+    <div style="position: relative; width: 100%; max-width: 600px; margin:auto;">
+      <img src="imagen.jpg" style="width:100%; border-radius:10px;">
+
+      <a href="https://wa.me/528334919831" target="_blank"
+         style="position:absolute; top:0; left:0; width:33.33%; height:100%;"></a>
+
+      <a href="https://instagram.com/legendsunderexile" target="_blank"
+         style="position:absolute; top:0; left:33.33%; width:33.33%; height:100%;"></a>
+
+      <a href="https://www.facebook.com/Dannylux" target="_blank"
+         style="position:absolute; top:0; left:66.66%; width:33.33%; height:100%;"></a>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
